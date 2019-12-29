@@ -1,0 +1,73 @@
+<div class="container mt-5">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">💡 Cómo utilizar el buscador?</h4>
+    <p>
+      En la caja de búsqueda ingresa las palabras clave que quieras buscar, puedes separarlas con
+      <code>"-"</code>, <code>","</code>, <code>"."</code>, <code>";"</code> (guiones, comas,
+      puntos, punto y coma).
+    </p>
+    <hr />
+    <p class="mb-0">
+      Las palabras clave que ingreses serán usadas para realizar la búsqueda de información en
+      Facebook.
+    </p>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <form #heroForm="ngForm">
+    <!--  -->
+    <!-- Main input -->
+    <!--  -->
+
+    <div class="form-group mb-4">
+      <label for="searchBox">Buscador...</label>
+      <input
+        class="form-control"
+        id="searchBox"
+        aria-describedby="searchBoxDescription"
+        placeholder="Palabras clave"
+        required
+        [(ngModel)]="rawKeywords"
+        name="searchBox"
+      />
+
+      <small id="searchBoxDescription" class="form-text text-muted">
+        Ingresa las palabras clave para realizar la búsqueda
+      </small>
+    </div>
+
+    <!--  -->
+    <!-- Actions -->
+    <!--  -->
+
+    <div class="row mb-4">
+      <div class="col-6">
+        <a [routerLink]="['/']" class="btn btn-outline-primary btn-block">Volver al inicio</a>
+      </div>
+      <div class="col-6">
+        <a
+          [routerLink]="['/results']"
+          class="btn btn-primary btn-block"
+          [queryParams]="{ q: formattedKeywords }"
+          [ngClass]="{ disabled: isInvalid }"
+        >
+          Buscar 🔍
+        </a>
+      </div>
+    </div>
+
+    <!--  -->
+    <!-- list keywords -->
+    <!--  -->
+
+    <div *ngIf="!!keywords" class="mb-4">
+      <h3>📃 Palabras Clave</h3>
+      <ul>
+        <li *ngFor="let keyword of keywords">{{ keyword }}</li>
+      </ul>
+    </div>
+  </form>
+</div>
