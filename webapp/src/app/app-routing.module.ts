@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 import { ResultsComponent } from './results/results.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
+  { path: '', component: AppComponent },
   { path: 'search', component: SearchComponent },
   { path: 'results/:id', component: ResultsComponent },
-  { path: '**', redirectTo: '/search', pathMatch: 'full' },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
