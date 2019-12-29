@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
 
         <hr class="my-4" />
 
-        <b>GRUPO DE TRABAJO:</b>
+        <h5>GRUPO DE TRABAJO:</h5>
         <ul>
           <li>Kelvin Ricardo Arrobo Castillo</li>
           <li>Bruno Alexander Esparza Carchi</li>
@@ -35,7 +35,9 @@ import { Component } from '@angular/core';
           <li>Jonathan Andres Rosero Soto</li>
         </ul>
 
-        <a class="btn btn-primary btn-lg" [routerLink]="['/search']" role="button">Buscar 🔍</a>
+        <a class="btn btn-primary btn-lg" [routerLink]="['/search']" role="button"
+          >Ir al buscador 👉</a
+        >
       </div>
     </div>
 
