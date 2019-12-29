@@ -1,1 +1,40 @@
-<p>search works</p>
+<div class="container mt-5">
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">💡 Cómo utilizar el buscador?</h4>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa elit, convallis sit
+      amet magna a, varius fermentum sem. Nullam dapibus libero non scelerisque molestie. Integer
+      gravida quam id magna ornare viverra. Suspendisse ultrices urna tincidunt lacus molestie, eget
+      dignissim dolor posuere.
+    </p>
+    <hr />
+    <p class="mb-0">
+      Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+    </p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="searchBox">Buscador...</label>
+      <input
+        class="form-control"
+        id="searchBox"
+        aria-describedby="searchBoxDescription"
+        placeholder="Palabras clave"
+      />
+      <small id="searchBoxDescription" class="form-text text-muted">
+        Ingresa las palabras clave para realizar la búsqueda
+      </small>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <a [routerLink]="['/']" class="btn btn-outline-dark btn-block">Volver al inicio</a>
+      </div>
+      <div class="col-6">
+        <a [routerLink]="['/results/SMA']" class="btn btn-primary btn-block">Buscar 🔍</a>
+        <!-- <button type="submit" class="btn btn-primary btn-block">Buscar 🔍</button> -->
+      </div>
+    </div>
+  </form>
+</div>
